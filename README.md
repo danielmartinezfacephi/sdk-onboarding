@@ -1,4 +1,4 @@
-# SDK Web WebComponents in Javascript
+# SDK Web WebComponents in Javascript with IAD
 
 Integration with Vanilla Javascript
 
