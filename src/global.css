@@ -1,0 +1,119 @@
+/* CSS Custom Properties (Variables) */
+:root {
+  --font-family: "Poppins", sans-serif;
+  --font-size-base: 16px;
+  --font-size-small: 0.8rem;
+  --font-size-medium: 0.9rem;
+  --font-size-large: 1rem;
+
+  --color-dark: #343a40;
+  --color-white: #ffffff;
+
+  --header-height-mobile: 50px;
+  --header-height-desktop: 80px;
+  --footer-height: 40px;
+
+  --spacing-sm: 10px;
+  --spacing-md: 25px;
+  --spacing-lg: 40px;
+}
+
+/* Reset and Base Styles */
+* {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout Container */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  padding: var(--spacing-md);
+  max-height: var(--header-height-mobile);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.header img {
+  max-height: 30px;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  width: 100%;
+}
+
+.sdk-section {
+  width: 100%;
+  /* 90px accounts for header + footer height */
+  height: calc(100vh - calc(var(--header-height-mobile) + var(--footer-height)));
+}
+
+/* Footer Styles */
+.footer {
+  max-height: var(--footer-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-medium);
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.footer p {
+  margin: 0;
+  padding: var(--spacing-sm);
+  max-height: var(--footer-height);
+  min-height: var(--footer-height);
+  font-size: var(--font-size-small);
+}
+
+.framework {
+  padding-right: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Media Queries */
+@media screen and (orientation: landscape) {
+  .sdk-section {
+    min-height: 480px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    max-height: var(--header-height-desktop);
+    padding: var(--spacing-lg);
+  }
+
+  .header img {
+    max-height: 40px;
+  }
+
+  .footer p {
+    font-size: var(--font-size-large);
+  }
+
+  .sdk-section {
+    height: calc(100vh - calc(var(--header-height-desktop) + var(--footer-height)));
+  }
+}
+
+app-finish-component {
+  height: 100%;
+  width: 100%;
+}
